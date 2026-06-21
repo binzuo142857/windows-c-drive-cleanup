@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows Drive Cleanup"
+  short_description: "Safely inspect and clean Windows system-drive caches"
+  default_prompt: "Use $windows-c-drive-cleanup to inspect my Windows system drive and propose a dry-run cleanup plan."
