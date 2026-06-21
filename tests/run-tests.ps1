@@ -23,8 +23,8 @@ foreach ($script in Get-ChildItem -LiteralPath $scriptsRoot -Filter '*.ps1' -Fil
 
 Write-Host 'Checking metadata and Windows-only boundaries...'
 $skillText = Get-Content -Raw -LiteralPath (Join-Path $skillRoot 'SKILL.md')
-Assert-True ($skillText -match '(?m)^name: windows-c-drive-cleanup$') 'SKILL.md name is missing or invalid.'
-Assert-True ($skillText -match '(?m)^description: .+$') 'SKILL.md description is missing.'
+Assert-True ($skillText -match '(?m)^name: windows-c-drive-cleanup\r?$') 'SKILL.md name is missing or invalid.'
+Assert-True ($skillText -match '(?m)^description: .+\r?$') 'SKILL.md description is missing.'
 
 $allText = (Get-ChildItem -LiteralPath $skillRoot -Recurse -File | ForEach-Object {
     Get-Content -Raw -LiteralPath $_.FullName
